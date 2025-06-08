@@ -46,19 +46,28 @@ public class ArvoreDel {
         } else if (elemento.getConteudo() > atual.getConteudo()) {
             atual.setDireita(deletarRecursivo(atual.getDireita(), elemento));
         } else { // Encontrou o nó a ser removido
+            System.out.println("Encontrou o elemento "+atual.getConteudo());
+
             if (semFilho(atual)) {
+                System.out.println("Não tem filho");
+
                 return null;
             }
 
             if (umFilho(atual)) {
+                System.out.println("Tem um filho");
 //                então verifica em que lado o filho está
                     if(atual.getDireita() != null){//Se tiver o filho a direita
-                        this.raiz = atual.getDireita();
+                        atual = atual.getDireita();
                     }else {//Se o filho for a esquerda
-                        this.raiz = atual.getEsquerda();
+                        atual = atual.getEsquerda();
                     }
+
+                System.out.println("O nó atual é "+atual.getConteudo()+ " "+ atual.getEsquerda().getConteudo());
                 return atual;
             }
+
+            System.out.println("Tem dois filho");
 
             // Dois filhos, remover pela subArvore esquerda
             No filho = atual.getEsquerda();
@@ -85,7 +94,6 @@ public class ArvoreDel {
                 pai.setDireita(filho.getEsquerda());
             }
         }
-
         return atual;
     }
 

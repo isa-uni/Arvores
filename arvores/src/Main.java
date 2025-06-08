@@ -10,12 +10,14 @@ public class Main {
         arvore.inserirRecursivo(60);
         arvore.inserirRecursivo(80);
         arvore.inserirRecursivo(65);
-        arvore.inserirRecursivo(68);
         arvore.inserirRecursivo(67);
+        arvore.inserirRecursivo(69);
+        arvore.inserirRecursivo(68);
         arvore.inserirRecursivo(59);
         arvore.visualizar();
-        
-        arvore.remover(50);
+
+        arvore.remover(67);
+
         System.out.println("==================");
         arvore.visualizar();
 
